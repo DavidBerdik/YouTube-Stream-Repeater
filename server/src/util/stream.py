@@ -38,7 +38,7 @@ async def stream_from_yt(id: str, format: str = "best", sl: str = None):
         # specify output format
         "-f", format,
         # matroska just allows every format possible
-        "--merge-output-format", "matroska"
+        "--merge-output-format", "mkv"
     ]
 
 
@@ -63,7 +63,7 @@ async def stream_from_yt(id: str, format: str = "best", sl: str = None):
             "-i", sub_fname,
             "-c", "copy",
             "-c:s", "srt",
-            "-f", "matroska",
+            "-f", "mkv",
             "pipe:"
         ]
 
