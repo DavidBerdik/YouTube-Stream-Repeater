@@ -45,10 +45,8 @@ def query_meta(id: str) -> dict:
         "title": data["fulltitle"],
         "author": {
             "name": data["channel"],
-            "subscribers": data["channel_follower_count"]
         },
         "thumbnail": data['thumbnail'],
-        "likes": data["like_count"],
         "views": data["view_count"],
         "formats": [],
         "subs": _only_named_subs(
