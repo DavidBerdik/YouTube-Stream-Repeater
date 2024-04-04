@@ -7,6 +7,8 @@ RUN pip3 --no-cache-dir install -r /tmp/requirements.txt
 RUN rm -v /tmp/requirements.txt
 # ffmpeg 6.0 and libmagic-dev 1:5.45-3 work.Working with this version,only use that versions if the newest version dont work!
 RUN apt update && apt install -y ffmpeg libmagic-dev
+#Remove this if you dont use newest version
+RUN apt upgrade -y
 
 # make the nonroot user
 RUN useradd user -m -s /usr/sbin/nologin
