@@ -3,10 +3,9 @@ FROM python:3.9-slim
 
 # install deps as root
 COPY ./requirements.txt /tmp/requirements.txt
-RUN pip3  --disable-pip-version-check --no-cache-dir install -r /tmp/requirements.txt
+RUN pip3 --no-cache-dir install -r /tmp/requirements.txt
 RUN rm -v /tmp/requirements.txt
-RUN pip3 install -U yt-dlp
-
+# ffmpeg 6.0 and libmagic-dev 1:5.45-3 work.Working with this version,only use that versions if the newest version dont work!
 RUN apt update && apt install -y ffmpeg libmagic-dev
 
 # make the nonroot user
