@@ -3,7 +3,7 @@ FROM python:3.9-slim
 
 # install deps as root
 COPY ./requirements.txt /tmp/requirements.txt
-RUN pip3  --disable-pip-version-check --no-cache-dir install -r /tmp/requirements.txt
+RUN pip3  --disable-pip-version-check --no-cache-dir install --break-system-packages -r /tmp/requirements.txt
 RUN rm -v /tmp/requirements.txt
 RUN pip3 install -U yt-dlp
 
